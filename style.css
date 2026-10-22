@@ -1,0 +1,241 @@
+:root {
+  --roxo: #5e2370;
+  --fundo: #f4f4f6;
+  --texto: #292929;
+  --borda: #d6d6dc;
+  --verde: #176b4d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--texto);
+  background: var(--fundo);
+  line-height: 1.5;
+}
+
+.topo {
+  padding: 20px;
+  background: var(--roxo);
+  color: white;
+}
+
+.topo > div {
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+.topo h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.topo p {
+  margin: 4px 0 0;
+}
+
+.layout {
+  max-width: 1150px;
+  margin: 22px auto;
+  padding: 0 16px;
+  display: grid;
+  grid-template-columns: 250px minmax(0, 1fr);
+  gap: 18px;
+  align-items: start;
+}
+
+.menu,
+.cartao {
+  background: white;
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+}
+
+.menu {
+  padding: 15px;
+}
+
+.menu h2 {
+  margin: 0 0 12px;
+  font-size: 1.05rem;
+}
+
+#menuExercicios {
+  display: grid;
+  gap: 5px;
+}
+
+.menu button {
+  padding: 9px;
+  text-align: left;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  background: white;
+  color: var(--texto);
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.menu button:hover,
+.menu button.ativo {
+  background: #eee6f1;
+  border-color: #cbb6d3;
+}
+
+.menu button.ativo {
+  color: var(--roxo);
+  font-weight: bold;
+}
+
+.conteudo {
+  min-width: 0;
+}
+
+.cartao {
+  padding: 24px;
+}
+
+.cartao h2 {
+  margin: 0 0 6px;
+  color: var(--roxo);
+  font-size: 1.4rem;
+}
+
+.descricao {
+  margin: 0 0 18px;
+  color: #555;
+}
+
+.campos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 13px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.campo label {
+  font-size: 0.92rem;
+  font-weight: bold;
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 9px 10px;
+  border: 1px solid #c8c8ce;
+  border-radius: 5px;
+  background: white;
+  font: inherit;
+}
+
+.campo textarea {
+  min-height: 78px;
+  resize: vertical;
+}
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+  outline: 2px solid #cbb6d3;
+  border-color: var(--roxo);
+}
+
+.acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 18px;
+}
+
+button.calcular,
+button.limpar {
+  padding: 10px 15px;
+  border-radius: 5px;
+  font: inherit;
+  cursor: pointer;
+}
+
+button.calcular {
+  border: 1px solid var(--roxo);
+  background: var(--roxo);
+  color: white;
+}
+
+button.limpar {
+  border: 1px solid var(--borda);
+  background: white;
+  color: var(--texto);
+}
+
+.resultado {
+  margin-top: 18px;
+  padding: 13px;
+  border-left: 4px solid var(--verde);
+  background: #edf6f1;
+  overflow-wrap: anywhere;
+}
+
+.resultado.erro {
+  border-color: #b33c3c;
+  background: #fff0f0;
+}
+
+.resultado h3 {
+  margin: 0 0 6px;
+  font-size: 1rem;
+}
+
+.resultado p {
+  margin: 4px 0;
+}
+
+.formula {
+  margin-top: 18px;
+  padding: 12px;
+  background: #f0f0f3;
+  border-radius: 5px;
+  font-size: 0.92rem;
+}
+
+.formula strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+@media (max-width: 760px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  #menuExercicios {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .menu button {
+    text-align: center;
+    padding: 8px 5px;
+  }
+
+  .campos {
+    grid-template-columns: 1fr;
+  }
+
+  .cartao {
+    padding: 18px;
+  }
+
+  .topo h1 {
+    font-size: 1.25rem;
+  }
+}
